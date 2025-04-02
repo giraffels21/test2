@@ -123,7 +123,7 @@ function setupEventListeners() {
         const word = document.getElementById('word-english').textContent;
         document.getElementById('egg-popup').classList.add('hidden');
         document.getElementById('mini-game').classList.remove('hidden');
-        document.getElementById('game-title').textContent = 'Word Jump遊戲';
+        document.getElementById('game-title').textContent = '單字跳躍遊戲';
         initMiniGame('word-jump', document.getElementById('game-container'), word);
     });
 
@@ -131,7 +131,7 @@ function setupEventListeners() {
         const words = gameState.words[gameState.currentGrade];
         document.getElementById('egg-popup').classList.add('hidden');
         document.getElementById('mini-game').classList.remove('hidden');
-        document.getElementById('game-title').textContent = 'Memory Match遊戲';
+        document.getElementById('game-title').textContent = '記憶配對遊戲';
         initMiniGame('memory-match', document.getElementById('game-container'), words);
     });
 
