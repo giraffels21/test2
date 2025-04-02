@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兒童節與清明節雙語教育遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 遊戲標題 -->
+    <header>
+        <h1>雙語節日探險</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+            <span id="progress-text">進度: 0%</span>
+        </div>
+    </header>
+
+    <!-- 年級選擇界面 -->
+    <div id="grade-select" class="screen">
+        <h2>選擇你的年級</h2>
+        <div class="grade-buttons">
+            <button class="grade-btn" data-grade="1-2">1-2年級</button>
+            <button class="grade-btn" data-grade="3-4">3-4年級</button>
+            <button class="grade-btn" data-grade="5-6">5-6年級</button>
+        </div>
+    </div>
+
+    <!-- 場景選擇界面 -->
+    <div id="scene-select" class="screen hidden">
+        <h2>選擇場景</h2>
+        <div class="scene-buttons">
+            <button class="scene-btn" data-scene="park">兒童節公園</button>
+            <button class="scene-btn" data-scene="nature">清明自然場景</button>
+            <button class="scene-btn" data-scene="museum">文化展覽館</button>
+        </div>
+    </div>
+
+    <!-- 遊戲場景容器 -->
+    <div id="game-scene" class="screen hidden">
+        <div class="scene-header">
+            <button id="back-btn">返回</button>
+            <h2 id="scene-title"></h2>
+            <div class="score">得分: <span id="score">0</span></div>
+        </div>
+        <div id="scene-container"></div>
+    </div>
+
+    <!-- 彩蛋彈窗 -->
+    <div id="egg-popup" class="popup hidden">
+        <div class="popup-content">
+            <h3 id="word-english"></h3>
+            <p id="word-chinese"></p>
+            <button id="speak-btn">朗讀</button>
+            <button id="close-popup">關閉</button>
+            <div class="mini-game-buttons">
+                <button id="word-jump-btn">單字跳躍遊戲</button>
+                <button id="memory-match-btn">記憶配對遊戲</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 小遊戲容器 -->
+    <div id="mini-game" class="screen hidden">
+        <div class="game-header">
+            <button id="back-to-scene">返回場景</button>
+            <h2 id="game-title"></h2>
+        </div>
+        <div id="game-container"></div>
+    </div>
+
+    <!-- 徽章展示區 -->
+    <div id="badges" class="badges-container">
+        <div class="badge" data-badge="egg-hunter">彩蛋收集者</div>
+        <div class="badge" data-badge="word-master">單字大師</div>
+        <div class="badge" data-badge="memory-king">記憶之王</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="minigames.js"></script>
+</body>
+</html> 

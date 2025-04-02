@@ -1,0 +1,315 @@
+/* 全局样式 */
+:root {
+    --primary-color: #FFB6C1;
+    --secondary-color: #98FB98;
+    --accent-color: #FFD700;
+    --text-color: #333;
+    --background-color: #F0FFF0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+/* 进度条样式 */
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* 屏幕通用样式 */
+.screen {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 按钮样式 */
+button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0.5rem;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 年级和场景按钮 */
+.grade-buttons, .scene-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.grade-btn, .scene-btn {
+    min-width: 200px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+/* 游戏场景样式 */
+#scene-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 彩蛋样式 */
+.egg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.egg:hover {
+    transform: scale(1.2);
+}
+
+/* 弹窗样式 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* 徽章样式 */
+.badges-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 1rem;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.badge.earned {
+    opacity: 1;
+}
+
+/* 动画效果 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .screen {
+        padding: 0.5rem;
+    }
+
+    #scene-container {
+        height: 400px;
+    }
+
+    .grade-btn, .scene-btn {
+        min-width: 150px;
+    }
+
+    .badges-container {
+        flex-direction: column;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* 小游戏容器样式 */
+#game-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 1rem;
+    min-height: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 场景头部样式 */
+.scene-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+}
+
+.score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Word Jump游戏样式 */
+.word-jump {
+    text-align: center;
+    padding: 2rem;
+}
+
+.word-jump .target-word {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: var(--accent-color);
+}
+
+.word-jump .game-area {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.falling-letter {
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.falling-letter:hover {
+    transform: scale(1.2);
+}
+
+/* Memory Match游戏样式 */
+.memory-match {
+    text-align: center;
+    padding: 2rem;
+}
+
+.memory-match .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+    background-color: var(--secondary-color);
+}
+
+.memory-card.matched {
+    background-color: var(--accent-color);
+    cursor: default;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .memory-match .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .word-jump .game-area {
+        height: 300px;
+    }
+
+    .falling-letter {
+        font-size: 1.5rem;
+    }
+} 
