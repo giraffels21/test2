@@ -139,6 +139,8 @@ button:hover {
 
 .popup.hidden {
     display: none !important;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .popup-content {
@@ -330,6 +332,11 @@ button:hover {
     background-color: white;
     z-index: 2000;
     overflow-y: auto;
+    display: none;
+}
+
+#mini-game:not(.hidden) {
+    display: block;
 }
 
 #mini-game.hidden {
