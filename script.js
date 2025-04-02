@@ -126,10 +126,11 @@ function setupEventListeners() {
         eggPopup.classList.add('hidden');
         // 確保彈窗完全隱藏後再顯示小遊戲
         setTimeout(() => {
-            document.getElementById('mini-game').classList.remove('hidden');
+            const miniGame = document.getElementById('mini-game');
+            miniGame.classList.remove('hidden');
             document.getElementById('game-title').textContent = '單字跳躍遊戲';
             initMiniGame('word-jump', document.getElementById('game-container'), word);
-        }, 100);
+        }, 300);
     });
 
     document.getElementById('memory-match-btn').addEventListener('click', () => {
@@ -139,15 +140,17 @@ function setupEventListeners() {
         eggPopup.classList.add('hidden');
         // 確保彈窗完全隱藏後再顯示小遊戲
         setTimeout(() => {
-            document.getElementById('mini-game').classList.remove('hidden');
+            const miniGame = document.getElementById('mini-game');
+            miniGame.classList.remove('hidden');
             document.getElementById('game-title').textContent = '記憶配對遊戲';
             initMiniGame('memory-match', document.getElementById('game-container'), words);
-        }, 100);
+        }, 300);
     });
 
     // 返回場景按鈕
     document.getElementById('back-to-scene').addEventListener('click', () => {
-        document.getElementById('mini-game').classList.add('hidden');
+        const miniGame = document.getElementById('mini-game');
+        miniGame.classList.add('hidden');
     });
 }
 
